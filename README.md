@@ -1,15 +1,22 @@
-# Gatsby Starter MDX Basic
+# Gatsby Starter Article Portfolio
 
-View this starter [live on Netlify](https://gatsby-starter-mdx-basic.netlify.com/)
+Started with Chris Biscardi's Gatsby Starter MDX Basic.
+Adds styled-components.
 
-This starter build MDX support into the
-[gatsby-default-starter](https://github.com/gatsbyjs/gatsby-starter-default). Its
-README also applies here.
+
+
+
+~~View this starter [live on Netlify](https://gatsby-starter-mdx-basic.netlify.com/)~~
+
+(Not yet...)
+
+
+# This ain't ready yet, but I might as well edit it?
 
 1. Create a new Gatsby site using this starter
 
 ```sh
-gatsby new my-site https://github.com/ChristopherBiscardi/gatsby-starter-mdx-basic
+gatsby new my-site https://github.com/r-i-c-h/foral-site
 ```
 
 2. Install dependencies
