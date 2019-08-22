@@ -84,14 +84,14 @@ const stylesReset = css`
     outline-offset: 0.02em;
   }
 
-// img {
-// display: inline-block;
-// border-style: none;
-// /* change max-width to width100% to allow images to scale UP */
-// /* max-width: 100%; */
-// height: auto;
-// vertical-align: middle;
-// }
+/* img {  */
+/* display: inline-block; */
+/* border-style: none;  */
+/* change max-width to width100% to allow images to scale UP */
+/* max-width: 100%; */
+/* height: auto;  */
+/* vertical-align: middle;  */
+/* }  */
 
 html {
   -webkit-text-size-adjust: 100%;

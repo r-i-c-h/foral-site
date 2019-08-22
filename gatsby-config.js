@@ -2,8 +2,10 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: 'Alisa Szaztrowski, PhD',
-    description: 'Alisa Szatrowski is a mixed methods researcher with a PhD in Sociology. She utilizes quantitative and qualitative methods to help organizations better understand and fully engage the diverse populations they serve. She knows firsthand that when organizations fully understand the complex and varied needs of their clients, they can create smarter, better designs that radically change the human experience.',
+    title: 'Alisa Szatrowski, PhD',
+    'description': 'Alisa Szatrowski is a mixed-methods researcher with a PhD in Sociology. She utilizes quantitative and qualitative methods to help organizations better understand and fully engage the diverse populations they serve. She knows firsthand that when organizations fully understand the complex and varied needs of their clients, they can create smarter, better designs that radically change the human experience.',
+    owner: 'Alisa Szatrowski',
+    siteBy: 'Rich Werden',
     author: 'rich at richwerden.com',
   },
 
@@ -23,10 +25,10 @@ module.exports = {
         path: `${__dirname}/src/pages`
       }
     },
-    'gatsby-plugin-react-axe',
     'gatsby-plugin-sharp',
-    `gatsby-plugin-styled-components`,
     'gatsby-transformer-sharp',
+    `gatsby-plugin-styled-components`,
+    'gatsby-plugin-react-axe',
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
