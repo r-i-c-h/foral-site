@@ -7,19 +7,15 @@ const FooterContainer = styled.footer`
   font-size: 8px;
   flex: none;
   padding: 3px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
   text-align: right;
   clear: both;
   background-color: ${props => props.theme.charcoal};
   color: ${props => props.theme.base};
-  box-shadow: 0px -4px 2px -2px rgba(0,0,0,0.5);
+  box-shadow: 0px -4px 2px -2px rgba(0,0,0,0.25);
 `;
 
 const SiteAttribution = styled.div`
-  /* max-width: 960px; */
 `;
 
 

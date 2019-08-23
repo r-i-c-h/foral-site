@@ -16,17 +16,18 @@ const PageWrapperOutterFrame = styled.div`
   height: 100%;
   width: 100%;
   min-height: 100vh;
-  background: ${props => props.theme.offWhite};
+  background: ${props => props.theme.whiteish};
 `;
 // ala ".HolyGrail-body"
 const PageWrapper = styled.div`
-  flex: 1 0 auto;
+  flex: 1;
   display: flex;
 `;
 
 // ".HolyGrail-content"
 const MainContent = styled.main`
-  flex: 1 0 auto;
+  /* flex: 1 0 auto; */
+  flex: 1;
   display: flex;
   max-width: 960px;
   padding: 1em;
@@ -60,7 +61,7 @@ const Layout = ({ children }) => {
           <Header siteTitle={siteMetadata.title} />
 
           <PageWrapper>
-            <Sidebar siteTitle={siteMetadata.title} description={siteMetadata.description} />
+            <Sidebar description={siteMetadata.description} />
             <MainContent>
               {children}
             </MainContent>

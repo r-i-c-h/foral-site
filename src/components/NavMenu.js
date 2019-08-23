@@ -6,7 +6,7 @@ import styled from 'styled-components';
 const SiteNav = styled.nav`
   width: 100%;
   color: ${props => props.theme.whiteish};
-  font-weight: 700;
+  font-weight: bold;
   background-color: ${props => props.theme.gray};
   display: flex;
   flex-direction: row;
@@ -17,9 +17,9 @@ const SiteNav = styled.nav`
 const StyledLink = styled(Link)`
   width: 100%;
   transition: background-color 400ms, color 400ms;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  letter-spacing: 1px;
   &:hover {
     background-color: ${props => props.theme.base};
     color: ${props => props.theme.charcoal};
