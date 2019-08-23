@@ -1,12 +1,23 @@
-//*** Fonts are <link> imported in SEO.js INSIDE THE <Helmet>  SEO Component ***/
+//*** Fonts <link> are imported in SEO.js INSIDE THE <Helmet> SEO Component ***/
 // `font-family: 'Jaldi', sans-serif;`;
 // `font-family: 'Roboto', sans-serif;`;
 // `font-family: 'Roboto Slab', serif;`;
 // `font-family: 'Open Sans', sans-serif;`;
 // `font-family: 'Jacques Francois', serif;`;
+//TODO: FIGURE OUT FONT WEIGHTS/Characters */
+// <link href="https://fonts.googleapis.com/css?family=Jacques+Francois|Jaldi|Open+Sans|Roboto|Roboto+Slab&display=swap" rel="stylesheet">
+// <link href="https://fonts.googleapis.com/css?family=Jacques+Francois|Roboto|Roboto+Slab&display=swap" rel="stylesheet">
+// <link href="https://fonts.googleapis.com/css?family=Jacques+Francois|Open+Sans|Roboto|Jaldi|Roboto+Slab&display=swap" rel="stylesheet">
+// <link href="https://fonts.googleapis.com/css?family=Jacques+Francois|Open+Sans&display=swap" rel="stylesheet" />
+// <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Jacques+Francois&display=swap" rel="stylesheet" />
+// <link href="https://fonts.googleapis.com/css?family=Jacques+Francois|Quicksand:500,700&display=swap" rel="stylesheet" />
 
 const bodyFont = `'Open Sans', sans-serif;`;
 const titleFont = `'Jacques Francois', serif;`;
+
+const googleFontsLink = `<link href="https://fonts.googleapis.com/css?family=Jacques+Francois|Open+Sans&display=swap" rel="stylesheet" />`;
+export { googleFontsLink };
+
 const bodyFontSize = `16px`;
 const bodyFontLineHeight = 1.5;
 const fontModScale = 1.446;

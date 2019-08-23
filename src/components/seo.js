@@ -1,108 +1,88 @@
-//! Fonts are imported in this component below in <Helmet>
-
+//! Fonts are link imported from Google in this component below in <Helmet>
+// Below per https://www.gatsbyjs.org/docs/add-seo-component/
 import React from 'react';
-import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
-
-//TODO: FIGURE OUT FONT WEIGHTS/Characters */
-// <link href="https://fonts.googleapis.com/css?family=Jacques+Francois|Jaldi|Open+Sans|Roboto|Roboto+Slab&display=swap" rel="stylesheet">
-// <link href="https://fonts.googleapis.com/css?family=Jacques+Francois|Roboto|Roboto+Slab&display=swap" rel="stylesheet">
-// <link href="https://fonts.googleapis.com/css?family=Jacques+Francois|Open+Sans|Roboto|Jaldi|Roboto+Slab&display=swap" rel="stylesheet">
-// <link href="https://fonts.googleapis.com/css?family=Jacques+Francois|Open+Sans&display=swap" rel="stylesheet" />
-// <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Jacques+Francois&display=swap" rel="stylesheet" />
-// <link href="https://fonts.googleapis.com/css?family=Jacques+Francois|Quicksand:500,700&display=swap" rel="stylesheet" />
-
-function SEO({ description, lang, meta, keywords, title }) {
-  return (
-    <StaticQuery
-      query={detailsQuery}
-      render={data => {
-        const metaDescription =
-          description || data.site.siteMetadata.description;
-        return (
-          <Helmet
-            htmlAttributes={{
-              lang,
-            }}
-            title={title}
-            titleTemplate={`%s | ${data.site.siteMetadata.title}`}
-            meta={[
-              {
-                name: 'description',
-                content: metaDescription,
-              },
-              {
-                property: 'og:title',
-                content: title,
-              },
-              {
-                property: 'og:description',
-                content: metaDescription,
-              },
-              {
-                property: 'og:type',
-                content: 'website',
-              },
-              {
-                name: 'twitter:card',
-                content: 'summary',
-              },
-              {
-                name: 'twitter:creator',
-                content: data.site.siteMetadata.author,
-              },
-              {
-                name: 'twitter:title',
-                content: title,
-              },
-              {
-                name: 'twitter:description',
-                content: metaDescription,
-              },
-            ]
-              .concat(
-                keywords.length > 0
-                  ? {
-                    name: 'keywords',
-                    content: keywords.join(', '),
-                  }
-                  : []
-              )
-              .concat(meta)}
-          >
-            <link href="https://fonts.googleapis.com/css?family=Jacques+Francois|Open+Sans&display=swap" rel="stylesheet" />
-          </Helmet>
-        );
-      }}
-    />
-  );
-}
-
-SEO.defaultProps = {
-  lang: 'en',
-  meta: [],
-  keywords: [],
-};
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.array,
-  keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired,
-};
-
-export default SEO;
 
 const detailsQuery = graphql`
   query DefaultSEOQuery {
     site {
       siteMetadata {
-        title
-        description
+        defaultTitle: title
+        titleTemplate
+        defaultDescription: description
+        siteUrl: url
         author
+        socialImage
+        keywordsList: keywords
       }
     }
   }
 `;
+
+function SEO({ pathname, title, description, lang, meta, article, keywords }) { //eslint-disable-line
+  return (
+    <StaticQuery
+      query={detailsQuery}
+      render={(data) => {
+        const { socialImage, defaultTitle, titleTemplate, defaultDescription, siteUrl, author, keywordsList } = data.site.siteMetadata;
+        const seo = {
+          title: title || defaultTitle,
+          description: description || defaultDescription,
+          url: `${siteUrl}${pathname || "/"}`,
+          author: author,
+          image: socialImage,
+          keywords: keywords.length > 0 ? keywordsList.concat(keywords) : keywordsList
+        };
+        return (
+          <>
+            <Helmet
+              htmlAttributes={{ lang }}
+              title={seo.title}
+              titleTemplate={titleTemplate}
+            >
+              <link href="https://fonts.googleapis.com/css?family=Jacques+Francois|Open+Sans&display=swap" rel="stylesheet" />
+              <meta name="description" content={seo.description} />
+              <meta name="keywords" content={seo.keywords.join(', ')} />
+              {seo.url && (<meta property="og:url" content={seo.url} />)}
+              {article ? (<meta property="og:type" content="article" />) : (<meta property="og:type" content="website" />)}
+              {seo.title && (<meta property="og:title" content={seo.title} />)}
+              {seo.description && (<meta property="og:description" content={seo.description} />)}
+              {seo.image && (<meta property="og:image" content={seo.image} />)}
+              {seo.image && (<meta property="og:image:alt" content="Promo Image for Alisa Szatrowski Website" />)}
+
+              <meta name="twitter:card" content="summary" />
+              {seo.title && (<meta name="twitter:title" content={seo.title} />)}
+              {seo.author && (<meta name="twitter:creator" content={seo.author} />)}
+              {seo.description && (<meta name="twitter:description" content={seo.description} />)}
+              {seo.image && (<meta name="twitter:image" content={seo.image} />)}
+              {seo.image && (<meta name="twitter:image:alt" content="Promo Image for Alisa Szatrowski Website" />)}
+            </Helmet>
+          </>);
+      }}
+    />
+  );
+}
+
+SEO.propTypes = {
+  lang: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  article: PropTypes.bool,
+  keywords: PropTypes.arrayOf(PropTypes.string),
+  meta: PropTypes.array,
+  pathname: PropTypes.string,
+};
+
+SEO.defaultProps = {
+  lang: 'en',
+  title: null,
+  description: null,
+  article: false,
+  keywords: [],
+  meta: [],
+  pathname: null,
+};
+
+export default SEO;
