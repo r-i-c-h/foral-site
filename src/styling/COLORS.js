@@ -9,16 +9,4 @@ const COLORS = {
   blackish: "#020201"
 };
 
-
-
-
 export default COLORS;
-
-// See https://palx.jxnblk.com/e6e6ae.scss for a big palette
-// primary: '#F9F9F6',
-// black: '#080805',
-// white: '#FDFDFB',
-// background: '#E6E6D7',
-// dark: '#A2A26A'
-
-// https://confrere.com/a11y/test/

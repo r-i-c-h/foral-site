@@ -1,7 +1,17 @@
+//! Fonts are imported in this component below in <Helmet>
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
+
+//TODO: FIGURE OUT FONT WEIGHTS/Characters */
+// <link href="https://fonts.googleapis.com/css?family=Jacques+Francois|Jaldi|Open+Sans|Roboto|Roboto+Slab&display=swap" rel="stylesheet">
+// <link href="https://fonts.googleapis.com/css?family=Jacques+Francois|Roboto|Roboto+Slab&display=swap" rel="stylesheet">
+// <link href="https://fonts.googleapis.com/css?family=Jacques+Francois|Open+Sans|Roboto|Jaldi|Roboto+Slab&display=swap" rel="stylesheet">
+// <link href="https://fonts.googleapis.com/css?family=Jacques+Francois|Open+Sans&display=swap" rel="stylesheet" />
+// <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Jacques+Francois&display=swap" rel="stylesheet" />
+// <link href="https://fonts.googleapis.com/css?family=Jacques+Francois|Quicksand:500,700&display=swap" rel="stylesheet" />
 
 function SEO({ description, lang, meta, keywords, title }) {
   return (
@@ -61,7 +71,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               )
               .concat(meta)}
           >
-            <link href="https://fonts.googleapis.com/css?family=Jacques+Francois|Quicksand:500,700&display=swap" rel="stylesheet" />
+            <link href="https://fonts.googleapis.com/css?family=Jacques+Francois|Open+Sans&display=swap" rel="stylesheet" />
           </Helmet>
         );
       }}
