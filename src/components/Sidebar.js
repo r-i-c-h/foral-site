@@ -1,8 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
-import PropTypes from "prop-types";
-// import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 
 import SidebarCard from './SidebarCard';
@@ -10,7 +6,7 @@ import SidebarCard from './SidebarCard';
 const TheSidebar = styled.aside`
   z-index: 222;
   padding: 0.8em;
-  /* width: 20%; */
+  min-width: 200px;
   flex: 0 0 20%;
   background: ${props => props.theme.base};
   text-align: center;
@@ -21,27 +17,10 @@ const TheSidebar = styled.aside`
 
 `;
 
-const SidebarTitle = styled.h3`
-  margin-bottom: 1em;
-`;
-
-const Sidebar = ({ siteTitle, }) => (
+const Sidebar = () => (
   <TheSidebar>
-    <SidebarTitle>
-      <Link to="/" >
-        {siteTitle}
-      </Link>
-    </SidebarTitle>
     <SidebarCard />
   </TheSidebar>
 );
-
-Sidebar.propTypes = {
-  siteTitle: PropTypes.string,
-};
-
-Sidebar.defaultProps = {
-  siteTitle: ``,
-};
 
 export default Sidebar;

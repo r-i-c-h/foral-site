@@ -13,7 +13,7 @@ const Card = styled.div`
   padding: 1em;
 `;
 
-const SidebarCard = ({ children }) => {
+const SidebarCard = () => {
   const data = useStaticQuery(graphql`
     query SiteDescriptionQuery {
       site {
