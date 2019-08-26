@@ -6,7 +6,7 @@ import styled, { ThemeProvider } from "styled-components";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import Footer from "./Footer";
-import GlobalStyle, { styleVars } from "../styling/globals";
+import GlobalStyle, { themeVars } from "../styling/styling";
 
 /* Double flexbox nesting to make things full height. #srzly? :-/ */
 // ala ".HolyGrail"
@@ -54,7 +54,7 @@ const Layout = ({ children }) => {
 
   const { siteMetadata } = data.site;
   return (
-    <ThemeProvider theme={styleVars}>
+    <ThemeProvider theme={themeVars}>
       <Fragment>
         <GlobalStyle />
         <PageWrapperOutterFrame>
