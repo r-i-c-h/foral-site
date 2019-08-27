@@ -22,6 +22,7 @@ const PageWrapperOutterFrame = styled.div`
 const PageWrapper = styled.div`
   flex: 1;
   display: flex;
+  background: ${props => props.theme.base};
 `;
 
 // ".HolyGrail-content"
@@ -34,6 +35,8 @@ const MainContent = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: ${props => props.theme.whiteish};
+
 `;
 
 const Layout = ({ children }) => {

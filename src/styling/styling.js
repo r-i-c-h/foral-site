@@ -12,9 +12,6 @@ const fsz = createModularFontSizing(fontModScale, bodyLineHeight);
 const { h0, h1, h2, h3, h4, h5, h6 } = fsz;
 const vrt = createVerticalSpacingObj(bodyFontSize, bodyLineHeight);
 
-console.log('fsz>> ', fsz);
-console.log('vrt>> ', vrt);
-
 const themeVars = {
   ...COLORS,
   ...FONTS,
