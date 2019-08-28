@@ -14,6 +14,11 @@ module.exports = {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
