@@ -12,7 +12,7 @@ const stylesReset = css`
   table,caption,tbody,tfoot,thead,tr,th,td,hr,dl,dt,dd,pre,code,
   blockquote,q,cite,figure,figcaption,form,fieldset,label,legend,
   time,address,audio, video {
-    margin:0;padding:0;border:0;font:inherit;vertical-align:baseline;
+    margin:0;padding:0;border:0;font-family:inherit;vertical-align:baseline;
   }
   /* prettier-ignore */
   header, footer,main,nav,article,aside,section,canvas,hgroup,figcaption,figure {
@@ -79,14 +79,11 @@ const stylesReset = css`
     outline-offset:0.02em;
   }
 
-/* img {  */
-/* display:inline-block;*/
-/* border-style:none; */
-/* change max-width to width100% to allow images to scale UP */
-/* max-width:100%;*/
-/* height:auto; */
-/* vertical-align:middle; */
-/* }  */
+img {
+  /* change max-width to "width:100%" to allow images to scale UP */
+  max-width:100%;
+  /* height:auto; */
+}
 
 html {
   -webkit-text-size-adjust:100%;
