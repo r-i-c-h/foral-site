@@ -1,4 +1,4 @@
-//*** Fonts <link> are imported in SEO.js INSIDE THE <Helmet> SEO Component ***/
+//*** Fonts <link> are imported in SEOMeta.js INSIDE THE <Helmet> Component ***/
 //TODO: FIGURE OUT FONT WEIGHTS/Characters */
 // `font-family: 'Jaldi', sans-serif;`;
 // `font-family: 'Roboto', sans-serif;`;

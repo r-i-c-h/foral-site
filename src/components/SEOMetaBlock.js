@@ -21,7 +21,7 @@ const detailsQuery = graphql`
   }
 `;
 
-function SEO({ pathname, title, description, lang, meta, article, keywords }) { //eslint-disable-line
+function SEOMetaBlock({ pathname, title, description, lang, meta, article, keywords }) { //eslint-disable-line
   return (
     <StaticQuery
       query={detailsQuery}
@@ -65,7 +65,7 @@ function SEO({ pathname, title, description, lang, meta, article, keywords }) { 
   );
 }
 
-SEO.propTypes = {
+SEOMetaBlock.propTypes = {
   lang: PropTypes.string,
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
@@ -75,7 +75,7 @@ SEO.propTypes = {
   pathname: PropTypes.string,
 };
 
-SEO.defaultProps = {
+SEOMetaBlock.defaultProps = {
   lang: 'en',
   title: null,
   description: null,
@@ -85,4 +85,4 @@ SEO.defaultProps = {
   pathname: null,
 };
 
-export default SEO;
+export default SEOMetaBlock;
