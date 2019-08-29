@@ -27,11 +27,8 @@ const PageWrapper = styled.div`
 
 // ".HolyGrail-content"
 const MainContent = styled.main`
-  /* flex: 1 0 auto; */
   flex: 1;
   display: flex;
-  max-width: 960px;
-  padding: 1em;
   flex-direction: column;
   justify-content: center;
   align-items: center;

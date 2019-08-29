@@ -12,7 +12,7 @@
 // <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Jacques+Francois&display=swap" rel="stylesheet" />
 // <link href="https://fonts.googleapis.com/css?family=Jacques+Francois|Quicksand:500,700&display=swap" rel="stylesheet" />
 
-const bodyFont = `'Open Sans', sans-serif;`;
+const bodyFont = `'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",sans-serif;`;
 const titleFont = `'Jacques Francois', serif;`;
 const googleFontsLink = `<link href="https://fonts.googleapis.com/css?family=Jacques+Francois|Open+Sans&display=swap" rel="stylesheet" />`;
 export { googleFontsLink };
