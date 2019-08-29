@@ -16,24 +16,18 @@ const PageWrapperOutterFrame = styled.div`
   height: 100%;
   width: 100%;
   min-height: 100vh;
-  background: ${props => props.theme.whiteish};
+  align-items: center;
+  background: ${props => props.theme.base};
 `;
 // ala ".HolyGrail-body"
 const PageWrapper = styled.div`
   flex: 1;
   display: flex;
   background: ${props => props.theme.base};
-`;
+  max-width: ${props => props.theme.maximumWidth};
 
+`;
 // ".HolyGrail-content" - Moved to LandingPageArticlesGrid
-// const MainContent = styled.main`
-//   flex: 1;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   background: ${props => props.theme.whiteish};
-// `;
 
 const Layout = ({ children, pageTitle }) => {
   const data = useStaticQuery(graphql`

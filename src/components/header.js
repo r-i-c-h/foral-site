@@ -16,9 +16,7 @@ const HeaderContainer = styled.header`
 
 `;
 const Title = styled.h1`
-  /* width: 100%; */
   font-size: ${props => props.theme.fsz.h2.remStr};
-
   margin: 0 auto;
 `;
 

@@ -18,7 +18,8 @@ const themeVars = {
   BREAKPOINTS,
   minScreenQs,
   fsz,
-  vrt
+  vrt,
+  maximumWidth: '1140px' // 1140?
 };
 export { themeVars };
 

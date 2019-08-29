@@ -3,17 +3,24 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-const SiteNav = styled.nav`
+const FullWidthNavContainer = styled.div`
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  font-weight: bold;
-  color: ${props => props.theme.whiteish};
   background-color: ${props => props.theme.gray};
   border-top: 1px solid ${props => props.theme.blackish};
   border-bottom: 1px solid ${props => props.theme.blackish};
   box-shadow: 0 3px 9px ${props => props.theme.gray};
+  opacity: 0.9;
+`;
+const SiteNav = styled.nav`
+  margin: 0 auto;
+  /* width: 75%; */
+  max-width: ${props => props.theme.maximumWidth};
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: bold;
+  color: ${props => props.theme.whiteish};
+  background-color: ${props => props.theme.gray};
 `;
 
 const StyledLink = styled(Link)`
@@ -46,18 +53,20 @@ const StyledLink = styled(Link)`
 
   }
   &:hover:before, &:focus:before, &:active:before {
-    transform: scaleX(0.8);
+    transform: scaleX(1);
   }
 `;
 
 
 const NavMenu = () => (
-  <SiteNav>
-    <StyledLink to='/'>Home</StyledLink>
-    <StyledLink to='/'>Articles</StyledLink>
-    <StyledLink to='/'>About</StyledLink>
-    <StyledLink to='/'>Contact</StyledLink>
-  </SiteNav>
+  <FullWidthNavContainer>
+    <SiteNav>
+      <StyledLink to='/'>Home</StyledLink>
+      <StyledLink to='/'>Articles</StyledLink>
+      <StyledLink to='/'>About</StyledLink>
+      <StyledLink to='/'>Contact</StyledLink>
+    </SiteNav>
+  </FullWidthNavContainer>
 );
 
 export default NavMenu;
