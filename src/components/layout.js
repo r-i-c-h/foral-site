@@ -4,7 +4,6 @@ import { useStaticQuery, graphql } from "gatsby";
 import styled, { ThemeProvider } from "styled-components";
 
 import Header from "./Header";
-import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 import GlobalStyle, { themeVars } from "../styling/styling";
 
@@ -25,16 +24,15 @@ const PageWrapper = styled.div`
   background: ${props => props.theme.base};
 `;
 
-// ".HolyGrail-content"
-const MainContent = styled.main`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: ${props => props.theme.whiteish};
-
-`;
+// ".HolyGrail-content" - Moved to LandingPageArticlesGrid
+// const MainContent = styled.main`
+//   flex: 1;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   background: ${props => props.theme.whiteish};
+// `;
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -61,10 +59,7 @@ const Layout = ({ children }) => {
           <Header siteTitle={siteMetadata.title} />
 
           <PageWrapper>
-            <Sidebar description={siteMetadata.description} />
-            <MainContent>
-              {children}
-            </MainContent>
+            {children}
           </PageWrapper>
 
           <Footer
