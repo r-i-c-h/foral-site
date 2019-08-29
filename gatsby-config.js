@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   siteMetadata: {
     title: 'Alisa Szatrowski, Ph.D.',
-    titleTemplate: '%s by A.Szatrowski',
+    titleTemplate: '%s - A.Szatrowski',
     description: 'Alisa Szatrowski Online Portfolio',
     owner: 'Alisa Szatrowski',
     author: 'Alisa Szatrowski',
