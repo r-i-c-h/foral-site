@@ -1,7 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { useStaticQuery, graphql } from "gatsby";
 
 const Card = styled.div`
   /* display: flex; */
@@ -14,26 +12,13 @@ const Card = styled.div`
 `;
 
 const SidebarCard = () => {
-  const data = useStaticQuery(graphql`
-    query SiteDescriptionQuery {
-      site {
-        siteMetadata {
-          description
-        }
-      }
-    }
-  `);
-  return (<Card><p>{data.site.siteMetadata.description}</p></Card>
+  return (
+    <Card>
+      <p>Alisa Szatrowski is a mixed-methods researcher with a PhD in Sociology. She utilizes quantitative and qualitative methods
+      to help organizations better understand and fully engage the diverse populations they serve. She knows firsthand that when
+      organizations fully understand the complex and varied needs of their clients, they can create smarter, better designs that
+      radically change the human experience.</p>
+    </Card>
   );
 };
-
 export default SidebarCard;
-
-
-SidebarCard.propTypes = {
-  data: PropTypes.string,
-};
-
-SidebarCard.defaultProps = {
-  data: `foo`,
-};

@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: 'Alisa Szatrowski, Ph.D.',
     titleTemplate: '%s by A.Szatrowski',
-    description: 'Alisa Szatrowski is a mixed-methods researcher with a PhD in Sociology. She utilizes quantitative and qualitative methods to help organizations better understand and fully engage the diverse populations they serve. She knows firsthand that when organizations fully understand the complex and varied needs of their clients, they can create smarter, better designs that radically change the human experience.',
+    description: 'Alisa Szatrowski Online Portfolio',
     owner: 'Alisa Szatrowski',
     author: 'Alisa Szatrowski',
     socialImage: '',
