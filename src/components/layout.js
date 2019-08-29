@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 import styled, { ThemeProvider } from "styled-components";
 
+import SEOMetaBlock from "./SEOMetaBlock";
 import Header from "./Header";
 import Footer from "./Footer";
 import GlobalStyle, { themeVars } from "../styling/styling";
@@ -34,7 +35,7 @@ const PageWrapper = styled.div`
 //   background: ${props => props.theme.whiteish};
 // `;
 
-const Layout = ({ children }) => {
+const Layout = ({ children, pageTitle }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -55,6 +56,7 @@ const Layout = ({ children }) => {
     <ThemeProvider theme={themeVars}>
       <Fragment>
         <GlobalStyle />
+        <SEOMetaBlock title={pageTitle} />
         <PageWrapperOutterFrame>
           <Header siteTitle={siteMetadata.title} />
 
@@ -73,7 +75,8 @@ const Layout = ({ children }) => {
 };
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  pageTitle: PropTypes.string
 };
 
 export default Layout;
