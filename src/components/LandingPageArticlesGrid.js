@@ -1,45 +1,43 @@
 import React from "react";
+import styled from "styled-components";
 // import PropTypes from "prop-types";
 // import { Link } from "gatsby";
-import styled from "styled-components";
-import Image from "../components/image";
+import LandingPageArticleLink from "./LandingPageArticleLink";
 
 // ".HolyGrail-content"
-const MainContent = styled.main`
+const LinksContainer = styled.main`
   flex: 1;
   display: flex;
-  height: 100%;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  background: ${props => props.theme.whiteish};
-  max-width: 75%;
-  /* height: 50%; */
-  /* max-height: 50%; */
-  border: 2px blue solid;
-`;
-
-const ArticleMain = styled.div`
-  flex: 1 0 100%;
-  background: ${props => props.theme.dark};
-  border: 2px red solid;
-`;
-
-const ArticleSecondary = styled.div`
-  flex: 1 0 50%;
   background: ${props => props.theme.base};
-  border: 2px green solid;
+  max-width: 75%;
 `;
 
-// const ArticlesGrid = () => {
-
-const LandingPageArticlesGrid = () => {
-  return (<MainContent>
-    <ArticleMain><Image /></ArticleMain>
-    <ArticleSecondary><Image /></ArticleSecondary>
-    <ArticleSecondary><Image /></ArticleSecondary>
-  </MainContent>);
-};
+const LandingPageArticlesGrid = () => (
+  <LinksContainer>
+    <LandingPageArticleLink
+      main
+      src="LandingPage-Main_topcrop.jpg"
+      alt="Graduation hats thrown in the air"
+      title="Pathways to Graduation and Beyond"
+      subtitle="Practices from two high schools for low-income students"
+    />
+    <LandingPageArticleLink
+      src="LandingPage-DNA.jpg"
+      alt="A DNA Helix"
+      title="Life-course poverty & mid-life health"
+      subtitle="Examining the impacts of childhood and adult poverty"
+    />
+    <LandingPageArticleLink
+      src="LandingPage-Fence.jpg"
+      alt="Fence with razor-wire top"
+      title="Mental Health in the House of Corrections"
+      subtitle="Evaluating the adequacy of care in NY State Prisons"
+    />
+  </LinksContainer>
+);
 //   <h1>Hi people</h1>
 //   <p>Welcome to your new Gatsby site.</p>
 //   <p>Now go build something great.</p>
