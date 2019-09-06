@@ -6,40 +6,51 @@ import Img from "gatsby-image";
 
 const Container = styled(Link)`
   flex: 1 0 ${props => props.main ? `100%` : `50%`};
-  display: inline-block;
-  /* position: absolute; */
-  width: 100%;
+  overflow: hidden;
+  position: relative;
   color: ${props => props.theme.whiteish};
-  background: ${props => props.theme.gray};
-  border: 1px solid ${props => props.theme.blackish};
+  background: ${props => props.theme.blackish};
+  /* border: 1px solid ${props => props.theme.blackish}; */
 `;
 
 const StyledImage = styled(Img)`
   position: relative;
-  bottom: 0;
-  left: 0;
-  right: 0;
   top: 0;
+  left: 0;
   z-index: 0;
-  & > img {
-    /* object-fit: cover !important; */
-    /* object-position: 0% 0% !important;*/
-    /* font-family: 'object-fit: cover !important; object-position: 0% 0% !important;' // needed for IE9+ polyfill */
+  width: 100%;
+  height: 100%;
+  transition: transform 300ms, opacity 300ms;
+  &:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
   }
 `;
+
 // const ImageSecondary = styled.div` flex: 1 0 50%; `;
 const TextBox = styled.div`
-  position: relative;
-  margin: ${props => props.theme.vrt.sm};
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  /* word-break: keep-all; */
+  transform: translate(-50%,-50%);
+  text-align: center;
+
+  padding: ${props => props.theme.vrt.sm};
 `;
 const TextCommonStyles = css`
   color: ${props => props.theme.whiteish};
   z-index: 3;
+  text-shadow: 1px 1px 1px ${props => props.theme.blackish};
 `;
 const LinkTitle = styled.h2`
   ${TextCommonStyles}
-  font-size: ${props => props.theme.fsz.h4.remStr};
+  font-size: ${props => props.main ? props.theme.fsz.h2.remStr : props.theme.fsz.h4.remStr};
+  letter-spacing: ${props => props.main ? '1px' : 'normal'};
 `;
+
 const LinkSubtitle = styled.h3`
   ${TextCommonStyles}
   font-size: ${props => props.theme.fsz.h5.remStr};
@@ -63,16 +74,18 @@ const LandingPageArticleLink = ({ src, alt, title, subtitle, main }) => {
       }
     }
   `);
-  return (<Container to='/' main={main}>
-    <StyledImage
-      alt={alt}
-      fluid={data.coverImage.childImageSharp.fluid}
-    />
-    <TextBox>
-      <LinkTitle>{title}</LinkTitle>
-      <LinkSubtitle>{subtitle}</LinkSubtitle>
-    </TextBox>
-  </Container>);
+  return (
+    <Container to='/' main={main}>
+      <StyledImage
+        alt={alt}
+        fluid={data.coverImage.childImageSharp.fluid}
+        title={title}
+      />
+      <TextBox main={main}>
+        <LinkTitle main={main}>{title}</LinkTitle>
+        <LinkSubtitle>{subtitle}</LinkSubtitle>
+      </TextBox>
+    </Container>);
 };
 
 LandingPageArticleLink.propTypes = {
