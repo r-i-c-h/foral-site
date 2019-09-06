@@ -12,8 +12,6 @@ const Container = styled(Link)`
   color: ${props => props.theme.whiteish};
   background: ${props => props.theme.blackish};
   border: 1px solid ${props => props.theme.blackish};
-  height: 40%;
-  max-height: 500px;
 `;
 const StyledImage = styled(Img)`
   position: relative;
@@ -34,19 +32,22 @@ const TextBox = styled.div`
   margin: 0 auto;
   top: 50%;
   transform: translateY(-50%);
+  width: 100%;
   text-align: center;
   padding: ${props => props.theme.vrt.sm};
+  background: rgba(0,0,0,0.6);
 `;
 const TextCommonStyles = css`
   color: ${props => props.theme.whiteish};
   z-index: 3;
-  text-shadow: 1px 1px 1px ${props => props.theme.blackish},
-              0px 0px 10px #000;
+  text-shadow: 1px 1px 1px ${props => props.theme.blackish};
+              ${'' /* 0px 0px 10px #000; */}
 `;
 const LinkTitle = styled.h2`
   ${TextCommonStyles}
   font-size: ${props => props.primary ? props.theme.fsz.h2.remStr : props.theme.fsz.h4.remStr};
   letter-spacing: ${props => props.primary ? '1px' : 'normal'};
+  line-height: 1.2;
 `;
 const LinkSubtitle = styled.h3`
   ${TextCommonStyles}
@@ -61,7 +62,7 @@ const LandingPageArticleLink = ({ picSrc, alt, title, subtitle, primary }) => {
     query {
       allImageSharp(filter: {fluid: {originalName: {regex: "/Land/i"}}}) {
         nodes {
-          fluid {
+          fluid (maxHeight:500){
             originalName
             ...GatsbyImageSharpFluid
           }
@@ -97,31 +98,3 @@ LandingPageArticleLink.propTypes = {
   primary: PropTypes.bool.isOptional
 };
 export default LandingPageArticleLink;
-
-export const fluidImageFragment = graphql`
-      fragment fluidImageFragment on File {
-        childImageSharp {
-          fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      `;
-
-export const pageQuery = graphql`
-      query {
-        imageOne: file(relativePath: { eq: "one.jpg" }) {
-          ...fluidImage
-        }
-        imageTwo: file(relativePath: { eq: "two.jpg" }) {
-          ...fluidImage
-        }
-      }
-      `;
-
-      // <Image
-      //   fluid={image}
-      //   style={{ position: `fixed` }}
-      //   backgroundColor={imageBackgroundColor ? imageBackgroundColor : false}
-      //   title={imageTitle}
-      // />
