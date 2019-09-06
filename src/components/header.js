@@ -12,12 +12,14 @@ const HeaderContainer = styled.header`
   text-align: center;
   background-color: ${props => props.theme.base};
   flex: none;
-  box-shadow: 0px 0px 2px -2px rgba(0,0,0,0.5)
+  /* box-shadow: 0px 0px 2px -2px rgba(0,0,0,0.5) */
 
 `;
 const Title = styled.h1`
   font-size: ${props => props.theme.fsz.h2.remStr};
   margin: 0 auto;
+  color: ${props => props.theme.charcoal};
+
 `;
 
 const TitleLink = styled(Link)``;

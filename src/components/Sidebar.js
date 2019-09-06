@@ -12,7 +12,6 @@ const TheSidebar = styled.aside`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background: ${props => props.theme.base};
   box-shadow: 4px 0px 2px -2px rgba(0,0,0,0.25);
 `;
 

@@ -101,6 +101,10 @@ body {
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   text-rendering:optimizeLegibility;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 `;
 

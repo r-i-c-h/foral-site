@@ -6,9 +6,9 @@ import styled from 'styled-components';
 const FullWidthNavContainer = styled.div`
   width: 100%;
   background-color: ${props => props.theme.gray};
-  border-top: 1px solid ${props => props.theme.blackish};
-  border-bottom: 1px solid ${props => props.theme.blackish};
-  box-shadow: 0 3px 9px ${props => props.theme.gray};
+  /* border-top: 1px solid ${props => props.theme.blackish}; */
+  /* border-bottom: 1px solid ${props => props.theme.blackish}; */
+  /* box-shadow: 0 3px 9px ${props => props.theme.gray}; */
   opacity: 0.9;
 `;
 const SiteNav = styled.nav`

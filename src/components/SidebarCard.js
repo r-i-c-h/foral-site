@@ -5,6 +5,7 @@ const Card = styled.div`
   /* display: flex; */
   /* flex-direction: column; */
   /* justify-content: flex-end; */
+  border-radius: 2px;
   box-shadow: 0px 0px 5px ${props => props.theme.gray};
   background: ${props => props.theme.base};
   /* height: 75%; */
