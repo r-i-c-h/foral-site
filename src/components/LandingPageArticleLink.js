@@ -4,6 +4,9 @@ import styled, { css } from "styled-components";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 
+import { slideUpAppear } from '../styling/animations';
+const fadeInDelay = 500;
+
 // const ImageSecondary = styled.div` flex: 1 0 50%; `;
 const Container = styled(Link)`
   flex: 1 0 ${props => props.primary ? `100%` : `50%`};
@@ -20,7 +23,7 @@ const StyledImage = styled(Img)`
   z-index: 0;
   width: 100%;
   height: 100%;
-  transition: transform 300ms, opacity 300ms;
+  transition: transform ${fadeInDelay}ms, opacity ${fadeInDelay}ms;
   &:hover {
     opacity: 0.7;
     transform: scale(1.1);
@@ -47,12 +50,15 @@ const LinkTitle = styled.h2`
   ${TextCommonStyles}
   font-size: ${props => props.primary ? props.theme.fsz.h2.remStr : props.theme.fsz.h4.remStr};
   letter-spacing: ${props => props.primary ? '1px' : 'normal'};
+  letter-spacing: ${props => props.primary ? '1px' : 'normal'};
   line-height: 1.2;
+  animation: ${slideUpAppear} ${fadeInDelay}ms ease-in;
 `;
 const LinkSubtitle = styled.h3`
   ${TextCommonStyles}
   font-family: ${props => props.theme.bodyFont};
   font-size: ${props => props.theme.fsz.h5.remStr};
+  animation: ${slideUpAppear} ${fadeInDelay + 100}ms ease-in;
 `;
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
