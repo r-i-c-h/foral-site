@@ -20,6 +20,26 @@ const getUnitVal = str => parseUnit(str)[0]; // "50"
 const pxToRemVal = px => parseFloat(px, 10) / 16;                     /* These functions all     */
 const pxToRemStr = px => `${pxToRemVal(px)}rem`;                      /* assume a device default */
 const pxToScreenWidthEm = px => pxToRemStr(px).replace(/rem$/, 'em'); /* rem unit of 16px!       */
+//** Color Utils **/
+function hexStrToRgbStr(str, opacity) {
+  let r, g, b;
+  let hexStr = str.replace(/^#/, "");
+  if (hexStr.length === 3) {
+    hexStr = hexStr[0] + hexStr[0] + hexStr[1] + hexStr[1] + hexStr[2] + hexStr[2];
+  }
+  if (hexStr.length !== 6) { return false; }
+  r = parseInt(hexStr.slice(0, 2), 16);
+  g = parseInt(hexStr.slice(2, 4), 16);
+  b = parseInt(hexStr.slice(4, 6), 16);
+  if (opacity) {
+    let a = opacity;
+    if (a > 1) {
+      a = a / 100;
+    }
+    return `rgba(${r},${g},${b},${a})`;
+  }
+  return `rgb(${r},${g},${b})`;
+}
 
 //!! FONT SIZES (Vert Units below) **/
 /** Create Obj of FONT-SIZES varying by a Modular Scale **/
@@ -95,6 +115,7 @@ export {
   pxToRemVal,       // @any -> num
   pxToRemStr,       // @any -> str
   pxToScreenWidthEm,// @any -> str
+  hexStrToRgbStr,   // @str -> str
   createModularFontSizing, // scale:num, line-height:num
   createVerticalSpacingObj // fontSizePx:str, line-height:num
 };
