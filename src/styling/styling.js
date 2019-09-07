@@ -19,7 +19,7 @@ const themeVars = {
   minScreenQs,
   fsz,
   vrt,
-  maximumWidth: '1140px' // 1140?
+  maximumWidth: '1164px' // 1140?
 };
 export { themeVars };
 
