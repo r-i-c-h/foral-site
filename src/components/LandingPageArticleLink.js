@@ -15,7 +15,6 @@ const Container = styled(Link)`
   color: ${props => props.theme.whiteish};
   /* background: ${props => props.theme.blackish}; */
   border: ${props => props.theme.vrt.xxxs} solid transparent;
-
 `;
 const StyledImage = styled(Img)`
   position: relative;
@@ -102,6 +101,6 @@ LandingPageArticleLink.propTypes = {
   alt: PropTypes.string,
   title: PropTypes.string,
   subtitle: PropTypes.string,
-  primary: PropTypes.bool.isOptional
+  primary: PropTypes.string.isOptional
 };
 export default LandingPageArticleLink;

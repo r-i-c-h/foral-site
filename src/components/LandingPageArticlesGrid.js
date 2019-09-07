@@ -34,7 +34,7 @@ const LandingPageArticlesGrid = () => (
   <MainContainer>
     <VerticalBox>
       <LandingPageArticleLink
-        primary="true"
+        primary={true}
         picSrc="LandingPage-ThrowHats.jpg"
         alt="Graduation hats thrown in the air"
         title="Pathways to Graduation and Beyond"
