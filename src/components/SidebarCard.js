@@ -2,14 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Card = styled.div`
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: flex-end; */
   border-radius: 2px;
-  box-shadow: 0px 0px 5px ${props => props.theme.gray};
+  box-shadow: 0px 1px 4px 0px ${props => props.theme.gray};
+  /* box-shadow: 0 1px 2px 0 rgba(71,84,97,0.3); */
   background: ${props => props.theme.base};
   /* height: 75%; */
-  padding: 1em;
+  /* padding: 1em; */
+  padding: 78px 25px 25px;
+  margin-top: -75px;
 `;
 
 const SidebarCard = () => {
