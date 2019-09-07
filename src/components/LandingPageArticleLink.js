@@ -13,8 +13,9 @@ const Container = styled(Link)`
   overflow: hidden;
   position: relative;
   color: ${props => props.theme.whiteish};
-  background: ${props => props.theme.blackish};
-  border: 1px solid ${props => props.theme.blackish};
+  /* background: ${props => props.theme.blackish}; */
+  border: ${props => props.theme.vrt.xxxs} solid transparent;
+
 `;
 const StyledImage = styled(Img)`
   position: relative;

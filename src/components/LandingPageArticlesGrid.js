@@ -5,40 +5,61 @@ import styled from "styled-components";
 import LandingPageArticleLink from "./LandingPageArticleLink";
 
 // ".HolyGrail-content"
-const LinksContainer = styled.main`
-  flex: 1;
+const MainContainer = styled.main`
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  align-content: stretch;
+  padding-top: ${props => props.theme.vrt.xxs};
+  overflow: hidden;
+`;
+
+const VerticalBox = styled.div`
+  position:relative;
+  flex: 1 1 50%;
+  max-height: 400px;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  /* align-items: center; */
-  /* align-items: stretch; */
-  align-content: flex-start;
-  /* background: ${props => props.theme.base}; */
-  /* width: 75%; */
+`;
+
+const BottomBox = styled.div`
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: row;
 `;
 
 const LandingPageArticlesGrid = () => (
-  <LinksContainer>
-    <LandingPageArticleLink
-      primary="true"
-      picSrc="LandingPage-ThrowHats.jpg"
-      alt="Graduation hats thrown in the air"
-      title="Pathways to Graduation and Beyond"
-      subtitle="Practices from two high schools for low-income students"
-    />
-    <LandingPageArticleLink
-      picSrc="LandingPage-DNA.jpg"
-      alt="A DNA Helix"
-      title="Life-course poverty & mid-life health"
-      subtitle="Examining the impacts of childhood and adult poverty"
-    />
-    <LandingPageArticleLink
-      picSrc="LandingPage-Fence.jpg"
-      alt="Fence with razor-wire top"
-      title="Mental Health in the House of Corrections"
-      subtitle="Evaluating the adequacy of care in NY State Prisons"
-    />
-  </LinksContainer>
+  <MainContainer>
+    <VerticalBox>
+      <LandingPageArticleLink
+        primary="true"
+        picSrc="LandingPage-ThrowHats.jpg"
+        alt="Graduation hats thrown in the air"
+        title="Pathways to Graduation and Beyond"
+        subtitle="Practices from two high schools for low-income students"
+      />
+    </VerticalBox>
+    <VerticalBox>
+      <BottomBox>
+        <LandingPageArticleLink
+          picSrc="LandingPage-DNA.jpg"
+          alt="A DNA Helix"
+          title="Life-course poverty & mid-life health"
+          subtitle="Examining the impacts of childhood and adult poverty"
+        />
+      </BottomBox>
+      <BottomBox>
+        <LandingPageArticleLink
+          picSrc="LandingPage-Fence.jpg"
+          alt="Fence with razor-wire top"
+          title="Mental Health in the House of Corrections"
+          subtitle="Evaluating the adequacy of care in NY State Prisons"
+        />
+      </BottomBox>
+    </VerticalBox>
+  </MainContainer>
 );
 
 //   <Link to="/page-2/">Go to page 2</Link>
