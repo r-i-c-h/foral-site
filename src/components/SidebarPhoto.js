@@ -22,7 +22,7 @@ const FakeCutBackground = styled.div`
   left: 50%;
   transform: translateX(-50%);
   top:75px; /* 150px/2 */
-  height: 84px; /** 160/2 + 2perside */
+  height: 80px; /** 160/2 + 2perside */
   width:160px;
   background:${props => props.theme.base};
   box-shadow:inset 0px 1px 4px 0px ${props => props.theme.gray};

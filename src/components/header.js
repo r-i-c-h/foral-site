@@ -13,6 +13,10 @@ const HeaderContainer = styled.header`
   background-color: ${props => props.theme.base};
   flex: none;
   /* box-shadow: 0px 0px 2px -2px rgba(0,0,0,0.5) */
+  border-top-width: ${props => props.theme.vrt.xxxs};
+  border-top-color: ${props => props.theme.darker};
+  border-top-style: solid;
+
 
 `;
 const Title = styled.h1`

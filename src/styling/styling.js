@@ -36,8 +36,11 @@ const GlobalStyle = createGlobalStyle`
     line-height: ${themeVars.bodyLineHeight};
   }
   p {
-    margin-top: ${vrt.md};
+    margin-top: ${vrt.sm};
     margin-bottom: ${vrt.md};
+  }
+  p + p {
+    margin-top: 0;
   }
   h1,h2,h3,h4,h5,h6,
   .h0,.h1,.h2,.h3,.h4,.h5,.h6 {

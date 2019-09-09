@@ -12,7 +12,7 @@ const MainContainer = styled.main`
   justify-content: center;
   align-items: stretch;
   align-content: stretch;
-  padding-top: ${props => props.theme.vrt.xxs};
+  padding-top: ${props => props.theme.vrt.xxxs};
   overflow: hidden;
 `;
 
@@ -37,7 +37,7 @@ const LandingPageArticlesGrid = () => (
         primary={true}
         picSrc="LandingPage-ThrowHats.jpg"
         alt="Graduation hats thrown in the air"
-        title="Pathways to Graduation and Beyond"
+        title="Pathways to Graduation and Beyond..."
         subtitle="Practices from two high schools for low-income students"
       />
     </VerticalBox>
@@ -46,8 +46,8 @@ const LandingPageArticlesGrid = () => (
         <LandingPageArticleLink
           picSrc="LandingPage-DNA.jpg"
           alt="A DNA Helix"
-          title="Life-course poverty & mid-life health"
-          subtitle="Examining the impacts of childhood and adult poverty"
+          title="Life-course Poverty & Mid-Life health"
+          subtitle="Examining Health impacts of childhood &amp; adult poverty"
         />
       </BottomBox>
       <BottomBox>

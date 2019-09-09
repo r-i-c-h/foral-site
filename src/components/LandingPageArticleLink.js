@@ -8,13 +8,13 @@ import { slideUpAppear } from '../styling/animations';
 const fadeInDelay = 500;
 
 // const ImageSecondary = styled.div` flex: 1 0 50%; `;
-const Container = styled(Link)`
+const LinkContainer = styled(Link)`
   flex: 1 0 ${props => props.primary ? `100%` : `50%`};
   overflow: hidden;
   position: relative;
   color: ${props => props.theme.whiteish};
-  /* background: ${props => props.theme.blackish}; */
-  border: ${props => props.theme.vrt.xxxs} solid transparent;
+  /* padding-top: ${props => props.theme.vrt.xxxs}; */
+
 `;
 const StyledImage = styled(Img)`
   position: relative;
@@ -37,7 +37,7 @@ const TextBox = styled.div`
   transform: translateY(-50%);
   width: 100%;
   text-align: center;
-  padding: ${props => props.theme.vrt.sm};
+  padding: ${props => props.theme.vrt.xs};
   background: rgba(0,0,0,0.6);
 `;
 const TextCommonStyles = css`
@@ -83,7 +83,7 @@ const LandingPageArticleLink = ({ picSrc, alt, title, subtitle, primary }) => {
     return null;
   }
   return (
-    <Container to='/' primary={primary}>
+    <LinkContainer to='/' primary={primary}>
       <StyledImage
         alt={alt}
         fluid={targetImage.fluid}
@@ -93,7 +93,7 @@ const LandingPageArticleLink = ({ picSrc, alt, title, subtitle, primary }) => {
         <LinkTitle primary={primary}>{title}</LinkTitle>
         <LinkSubtitle>{subtitle}</LinkSubtitle>
       </TextBox>
-    </Container>);
+    </LinkContainer>);
 };
 
 LandingPageArticleLink.propTypes = {

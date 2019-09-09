@@ -6,14 +6,10 @@ import styled from 'styled-components';
 const FullWidthNavContainer = styled.div`
   width: 100%;
   background-color: ${props => props.theme.gray};
-  /* border-top: 1px solid ${props => props.theme.blackish}; */
-  /* border-bottom: 1px solid ${props => props.theme.blackish}; */
-  /* box-shadow: 0 3px 9px ${props => props.theme.gray}; */
   opacity: 0.9;
 `;
 const SiteNav = styled.nav`
   margin: 0 auto;
-  /* width: 75%; */
   max-width: ${props => props.theme.maximumWidth};
   display: flex;
   flex-direction: row;
@@ -48,6 +44,9 @@ const StyledLink = styled(Link)`
     transition-duration: 0.3s;
     transition-timing-function: ease-out;
   }
+  &.active {
+    color: ${props => props.theme.darker};
+  }
   &:hover, &:focus {
     color: ${props => props.theme.charcoal};
 
@@ -61,10 +60,10 @@ const StyledLink = styled(Link)`
 const NavMenu = () => (
   <FullWidthNavContainer>
     <SiteNav>
-      <StyledLink to='/'>Home</StyledLink>
-      <StyledLink to='/'>Articles</StyledLink>
-      <StyledLink to='/'>About</StyledLink>
-      <StyledLink to='/'>Contact</StyledLink>
+      <StyledLink to='/' activeClassName="active">Home</StyledLink>
+      <StyledLink to='/' activeClassName="active">Articles</StyledLink>
+      <StyledLink to='/about' activeClassName="active">About</StyledLink>
+      <StyledLink to='/' activeClassName="active">Contact</StyledLink>
     </SiteNav>
   </FullWidthNavContainer>
 );
