@@ -63,7 +63,7 @@ const NavMenu = () => (
       <StyledLink to='/' activeClassName="active">Home</StyledLink>
       <StyledLink to='/' activeClassName="active">Articles</StyledLink>
       <StyledLink to='/about' activeClassName="active">About</StyledLink>
-      <StyledLink to='/' activeClassName="active">Contact</StyledLink>
+      <StyledLink to='/contact' activeClassName="active">Contact</StyledLink>
     </SiteNav>
   </FullWidthNavContainer>
 );
