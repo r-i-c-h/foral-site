@@ -1,24 +1,21 @@
 ---
-title: The first Article!
+title: Pathways to Graduation and Beyond
+subtitle: Practices from two high schools for low-income students
 pageIndex: 1
-slugPath: /art-1
-date: 2019-01-29
-seoTitle: Pathways to Education
-heroImagePath: images/Banana.jpg
+slugPath: /pathways-to-graduation-and-beyond
+seoTitle: Pathways to Graduation and Beyond
 ---
 
 Not sure what'll happen here. Not at all...
-`<h2> { props.front.heroImagePath }</h2>`
-`<h5> c/o { props.site.author } at { props.front.date } </h5>`
 
 <article>
 ## That h5 above me is from the page's frontmatter as well as the site's metadata...
 
 Behold a pull-quote of nonsense lorem ipsumy goodness...
+
 > Sub-orbital face forwards neural military-grade rain network dead range-rover drone. Car claymore mine girl shrine garage courier market.
 
-
-To use a page's **FRONTMATTER** from *within* the same page: Docs say call to `props.pageContext.frontmatter.____`, but that didn't work. Maybe because I have an extra template rendering layer? Using the "secret" `layoutProps._frontmatter.heroImagePath` *did* work for me, but now I've moved the graphql query into the post-layout.js page and pass down `front` and `site` as props through `<MDXRenderer>`... &lt;shruggo&gt;
+To use a page's **FRONTMATTER** from _within_ the same page: Docs say call to `props.pageContext.frontmatter.____`, but that didn't work. Maybe because I have an extra template rendering layer? Using the "secret" `layoutProps._frontmatter.heroImagePath` _did_ work for me, but now I've moved the graphql query into the post-layout.js page and pass down `front` and `site` as props through `<MDXRenderer>`... &lt;shruggo&gt;
 
 To use **SITE METADATA** in a post - import graphql and export a `query` that pulls `site{siteMetatdata{ ___`... but putting gQL in this mdx file seemed to freak things out. `:-/`
 
@@ -32,9 +29,9 @@ Pre-narrative saturation point man shrine smart-drugs decay bicycle cyber-garage
 
 Long-chain hydrocarbons assassin 3D-printed grenade sunglasses camera woman. Kanji Tokyo sentient girl j-pop sign paranoid fluidity neural face forwards neon jeans carbon plastic monofilament bridge chrome. Alcohol voodoo god 8-bit post-dead-ware sprawl sub-orbital rain hotdog garage footage beef noodles shrine Shibuya otaku wristwatch. Plastic network gang sunglasses meta-car garage rifle. Gang beef noodles knife-ware dolphin pen marketing wristwatch digital dome sprawl pistol systemic rain render-farm motion girl.
 
-  * Thing1
-  * Thing2
-  * Other Thing
+- Thing1
+- Thing2
+- Other Thing
 
 Industrial grade RAF nodal point papier-mache tube systemic city computer 8-bit media. Urban order-flow pistol weathered construct jeans tank-traps katana car neural kanji youtube smart-Chiba. Grenade drone BASE jump human crypto-physical drugs boat skyscraper sunglasses nano-girl office franchise. Disposable stimulate apophenia sign neural man sunglasses meta-artisanal concrete urban vinyl shoes otaku bomb saturation point network. Katana uplink kanji motion systema j-pop pre-neural.
 
