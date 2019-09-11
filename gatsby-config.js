@@ -29,6 +29,13 @@ module.exports = {
         name: `pages`
       }
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/articles`,
+        name: `articles`
+      }
+    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     `gatsby-plugin-styled-components`,
@@ -37,7 +44,10 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: ['.mdx', '.md'],
-        defaultLayouts: { default: path.resolve('./src/components/layout.js') },
+        defaultLayouts: {
+          articles: require.resolve("./src/components/ArticleTemplate.js"),
+          default: require.resolve("./src/components/layout.js")
+        }
       },
     },
     {
