@@ -39,6 +39,7 @@ const LandingPageArticlesGrid = () => (
         alt="Graduation hats thrown in the air"
         title="Pathways to Graduation and Beyond..."
         subtitle="Practices from two high schools for low-income students"
+        whereto="/pathways-to-graduation-and-beyond"
       />
     </VerticalBox>
     <VerticalBox>
@@ -48,6 +49,7 @@ const LandingPageArticlesGrid = () => (
           alt="A DNA Helix"
           title="Life-course Poverty & Mid-Life health"
           subtitle="Examining Health impacts of childhood &amp; adult poverty"
+          whereto="/examining-poverty-impacts-on-health"
         />
       </BottomBox>
       <BottomBox>
@@ -56,6 +58,7 @@ const LandingPageArticlesGrid = () => (
           alt="Fence with razor-wire top"
           title="Mental Health in the House of Corrections"
           subtitle="Evaluating the adequacy of care in NY State Prisons"
+          whereto=""
         />
       </BottomBox>
     </VerticalBox>

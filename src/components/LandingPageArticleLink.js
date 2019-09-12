@@ -63,7 +63,7 @@ const LinkSubtitle = styled.h3`
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 // eslint-disable-next-line
-const LandingPageArticleLink = ({ picSrc, alt, title, subtitle, primary }) => {
+const LandingPageArticleLink = ({ picSrc, alt, title, subtitle, primary, whereto }) => {
   const data = useStaticQuery(graphql`
     query {
       allImageSharp(filter: {fluid: {originalName: {regex: "/Land/i"}}}) {
@@ -83,7 +83,7 @@ const LandingPageArticleLink = ({ picSrc, alt, title, subtitle, primary }) => {
     return null;
   }
   return (
-    <LinkContainer to='/' primary={primary}>
+    <LinkContainer to={whereto} primary={primary}>
       <StyledImage
         alt={alt}
         fluid={targetImage.fluid}
