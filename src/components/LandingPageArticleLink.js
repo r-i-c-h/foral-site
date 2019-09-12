@@ -50,7 +50,6 @@ const LinkTitle = styled.h2`
   ${TextCommonStyles}
   font-size: ${props => props.primary ? props.theme.fsz.h2.remStr : props.theme.fsz.h4.remStr};
   letter-spacing: ${props => props.primary ? '1px' : 'normal'};
-  letter-spacing: ${props => props.primary ? '1px' : 'normal'};
   line-height: 1.2;
   animation: ${slideUpAppear} ${fadeInDelay}ms ease-in;
 `;
