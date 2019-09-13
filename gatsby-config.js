@@ -47,7 +47,26 @@ module.exports = {
         defaultLayouts: {
           articles: require.resolve("./src/components/ArticleTemplate.js"),
           default: require.resolve("./src/components/layout.js")
-        }
+        },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1035,
+              quality: 90,
+              withWebp: true,
+              linkImagesToOriginal: false,
+            },
+          },
+          // Don't think I actually need the below, but just in case....
+          {
+            resolve: 'gatsby-remark-external-links',
+            options: {
+              target: '_blank',
+              rel: 'nofollow noopener noreferrer',
+            },
+          }
+        ],
       },
     },
     {
@@ -77,5 +96,7 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
+    //?? 'gatsby-plugin-sitemap',
+    //?? 'gatsby-plugin-netlify'
   ],
 };
