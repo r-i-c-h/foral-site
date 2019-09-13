@@ -55,6 +55,7 @@ module.exports = {
               maxWidth: 1035,
               quality: 90,
               withWebp: true,
+              backgroundColor: 'transparent',
               linkImagesToOriginal: false,
             },
           },
@@ -67,6 +68,9 @@ module.exports = {
             },
           }
         ],
+        // TODO: Remove this workaround
+        // https://github.com/gatsbyjs/gatsby/issues/15486
+        plugins: [`gatsby-remark-images`, `gatsby-remark-external-links`],
       },
     },
     {
