@@ -13,9 +13,10 @@ const VerticalContainer = styled.div`
   flex-direction: column;
   margin-top: ${ props => props.theme.vrt.lg};
   align-items: center;
+  text-align: center;
   & p {
     text-align: left;
-    max-width: 720px;
+    width: 720px;
   }
 `;
 
