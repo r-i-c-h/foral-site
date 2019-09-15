@@ -4,10 +4,10 @@ import styled from 'styled-components';
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "./layout";
-// import HeroImage from './HeroImage';
+import Hero from './Hero';
 // import Pullquote from './Pullquote';
 
-const VerticalContainer = styled.div`
+const VerticalContainer = styled.main`
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -21,30 +21,51 @@ const VerticalContainer = styled.div`
 `;
 
 export default function ArticleTemplate({ data: { mdx } }) {
+  const { title, subtitle, heroAlt, seoTitle } = mdx.frontmatter;
+  const heroImageSrc = mdx.frontmatter.heroImage.childImageSharp.fluid.originalName;
   return (
-    <Layout>
+    <Layout pageTitle={seoTitle}>
       <VerticalContainer>
-        <h1>{mdx.frontmatter.title}</h1>
-        <MDXRenderer
-          front={mdx.frontmatter}
-        >
-          {mdx.body}
-        </MDXRenderer>
+        <Hero
+          title={title}
+          subtitle={subtitle}
+          heroAlt={heroAlt}
+          heroImageSrc={heroImageSrc}
+        />
+        <article>
+          <MDXRenderer
+            postInfo={mdx.frontmatter}
+          >
+            {mdx.body}
+          </MDXRenderer>
+        </article>
       </VerticalContainer>
     </Layout>
   );
 }
 
 export const pageQuery = graphql`
-query ArticleQuery($id: String) {
-  mdx(id: { eq: $id }) {
-    id
-    body
-    frontmatter {
-      title
+  query ArticleQuery($id: String) {
+    mdx(id: { eq: $id }) {
+      id
+      body
+      frontmatter {
+        title
+        subtitle
+        pageIndex
+        slugPath
+        heroAlt
+        seoTitle
+        heroImage {
+          childImageSharp {
+            fluid {
+              originalName
+            }
+          }
+        }
+      }
     }
   }
-}
 `;
 
 ArticleTemplate.propTypes = {

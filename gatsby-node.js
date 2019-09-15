@@ -1,6 +1,7 @@
 const path = require("path");
 const { createFilePath } = require("gatsby-source-filesystem");
 
+/** Setup Slug if not found in frontmatter**/
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
   if (node.internal.type === "Mdx") {
@@ -22,15 +23,17 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
+/** Create Pages: **/
 exports.createPages = async ({ graphql, actions, reporter }) => {
   // Destructure the createPage function from the actions object
   const { createPage } = actions;
   const result = await graphql(`
     query {
-      allMdx {
+      allMdx(limit:1000){
         edges {
           node {
             id
+            fileAbsolutePath
             fields {
               slug
             }
@@ -45,7 +48,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Create blog post pages.
   const posts = result.data.allMdx.edges;
   // We'll call `createPage` for each result
-  posts.forEach(({ node }, index) => {
+  posts.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
       // This component will wrap our MDX content
